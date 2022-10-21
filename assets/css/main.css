@@ -45,7 +45,7 @@ a {
     text-transform: uppercase;
 }
 
-/* || Main Nav RUles */
+/* || Main Nav Rules */
 .main-menu{
     display: flex;
     gap: 11px;
@@ -57,17 +57,17 @@ a {
 }
 
 .main-menu-item::after{
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 0%;
-    height: 5px;
     background: linear-gradient(to left bottom,#FFF000,#ED008C);
     border-radius: 16px;
+    bottom: -10px;
+    content: "";
+    left: 0;
+    position: absolute;
     transition: width 500ms ease-out;
+    height: 5px;
+    width: 0%;
 }
 
 .main-menu-item:hover::after{
-   width: 100%;
+    width: 100%;
 }
