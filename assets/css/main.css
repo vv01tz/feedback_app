@@ -18,8 +18,11 @@ input{
 
 /* || General Rules */
 body{
+    justify-content: space-between;
     background-color: #0D0D0D;
+    display: flex;
     color: #fff;
+    flex-direction: column;
     font-family: "Inter", sans-serif;
     min-height: 100%;
 }
@@ -34,7 +37,7 @@ a {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto 60px auto;
+    margin: 0 auto;
     max-width: 1200px;
     padding-top: 30px;
     width: 80%;
@@ -63,7 +66,7 @@ a {
     content: "";
     left: 0;
     position: absolute;
-    transition: width 500ms ease-out;
+    transition: width 320ms ease-out;
     height: 5px;
     width: 0%;
 }
@@ -126,6 +129,7 @@ a {
 .btn{
     background-color: #030303;
     color: #fff;
+    cursor: pointer;
     border: none;
     font-size: 16px;
     margin-top: 23px;
