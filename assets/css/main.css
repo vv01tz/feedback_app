@@ -77,7 +77,7 @@ a {
 }
 
 /* || Card Rules */
-.card{
+.form-container{
     background-color: #fff;
     border-radius: 16px;
     color: #000;
@@ -88,7 +88,7 @@ a {
     width: 89%;
 }
 
-.card::before{
+.form-container::before{
     background: linear-gradient(to left bottom, #ED008C, #FFF000);
     content: "";
     filter: blur(50px);
@@ -100,11 +100,11 @@ a {
     z-index: -1;
 }
 
-.card-header-heading{
+.form-header-heading{
     margin-bottom: 23px;
 }
 
-.card-header-desc{
+.form-header-desc{
     width: 247px;
     margin-bottom: 23px;
 }

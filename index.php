@@ -1,15 +1,15 @@
 <?php require "inc/header.php" ?>
-<article class="card">
-    <div class="card-header">
-        <h1 class="card-header-heading">
+<article class="form-container">
+    <div class="form-header">
+        <h1 class="form-header-heading">
             Feedback
         </h1>
-        <p class="card-header-desc">
+        <p class="form-header-desc">
             Tell us what you thought of our service
         </p>
     </div>
 
-    <div class="card-body">
+    <div class="form-body">
         <form method="POST" action="feedback-submit.php">
             <div class="form-control">
                 <input class="form-input" id="fullname" type="text" name="full_name" required>
