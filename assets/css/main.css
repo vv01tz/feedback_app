@@ -176,6 +176,43 @@ a {
     font-weight: 800;
 }
 
+/* || Card Rules */
+.card{
+    background-color: #fff;
+    border-radius: 8px;
+    color: #000;
+    padding: 22px 20px;
+    margin: 0 auto;
+    max-width: 375px;
+    width: 80%;
+}
+
+.card + .card{
+    margin-top: 26px;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-header,
+.card-body{
+    margin-bottom: 22px;
+}
+
+.card-username{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card-text{
+    line-height: 1.5;
+}
+
+.card-date{
+    font-size: 12px;
+}
 /* || Footer Rules */
 .footer{
     padding: 27px 0;
