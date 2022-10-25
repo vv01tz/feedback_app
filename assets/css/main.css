@@ -84,8 +84,20 @@ a {
     margin: 0 auto;
     max-width: 375px;
     padding: 32px 20px;
+    position: relative;
     width: 89%;
+}
 
+.card::before{
+    background: linear-gradient(to left bottom, #ED008C, #FFF000);
+    content: "";
+    filter: blur(50px);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0; 
+    width: 100%;
+    z-index: -1;
 }
 
 .card-header-heading{
@@ -100,7 +112,7 @@ a {
 /* || Form Rules */
 .form-control input,
 .form-control textarea{
-    background-color: #D9D9D9;
+    background-color: #ededed;
     border: none;
     padding: 9px 16px;
     width: 100%;
