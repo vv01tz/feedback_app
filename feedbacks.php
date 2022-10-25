@@ -1,18 +1,15 @@
 <?php require 'inc/header.php' ?>
+<?php require 'config.php' ?>
 <?php
-    $user = "segfault";
-    $password = "beCode2023";
-    $servername = "localhost";
-
     // Connect to database
-    $db_connection = new mysqli($servername, $user, $password, "feedback");
+    $db_connection = new mysqli($servername, $db_user, $db_password, $db);
     if ($db_connection->connect_error)
     {
         die("Connection failed".$db_connection->connect_error);
     }
 
     // Get feebacks from the database
-    $data = $db_connection->query("SELECT * FROM user_feedback");
+    $data = $db_connection->query("SELECT * FROM user_feedback ORDER BY DATE desc");
     if (!isset($data))
     {
         echo "No feedback yet";
@@ -25,11 +22,11 @@
         // Start of card header
         echo "<div class='card-header'>";
 
-        echo "<div>";
+        echo "<div class='card-username'>";
         echo $i["name"];
         echo "</div>";
 
-        echo "<div>";
+        echo "<div class='card-rating'>";
         echo $i["rating"];
         echo "</div>";
         
@@ -38,13 +35,18 @@
 
         // Start of card body
         echo "<div class='card-body'>";
+        echo "<p class='card-text'>";
         echo $i["message"];
+        echo "</p>";
         echo "</div>";
         // End of card body
 
         // Start of card footer
+        $feedback_date = date_create($datetime=$i['date']);
         echo "<div class='card-footer'>";
-        echo $i["date"];
+        echo "<p class='card-date'>";
+        echo date_format($feedback_date, "d/m/Y");
+        echo "</p>";
         echo "</div>";
         // End of card footer
 
