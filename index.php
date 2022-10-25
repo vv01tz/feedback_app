@@ -10,7 +10,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST">
+        <form method="POST" action="feedback-submit.php">
             <div class="form-control">
                 <input class="form-input" id="fullname" type="text" name="full_name" required>
                 <label for="fullname"> Full Name </label>
