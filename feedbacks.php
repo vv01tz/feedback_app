@@ -15,7 +15,12 @@
         echo "No feedback yet";
     }
 
-    foreach ($data as $i) {
+    $db_connection->close();
+    
+?>
+<div class="feedback-container">
+    <?php
+        foreach ($data as $i) {
         // Start of card
         echo "<article class='card'>";
 
@@ -52,9 +57,7 @@
 
         // End of card
         echo "</article>";
-    }
-
-    $db_connection->close();
-    
-?>
+        }
+    ?>
+</div>
 <?php require 'inc/footer.php' ?>
