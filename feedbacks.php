@@ -31,8 +31,8 @@
         echo $i["name"];
         echo "</div>";
 
-        echo "<div class='card-rating'>";
-        echo $i["rating"];
+        echo "<div data-rating=$i[rating] class='card-rating'>";
+
         echo "</div>";
         
         echo "</div>";
