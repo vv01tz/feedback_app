@@ -101,6 +101,7 @@ a {
 }
 
 .form-header-heading{
+    font-size: clamp(26px, 2vw, 36px);
     margin-bottom: 23px;
 }
 
