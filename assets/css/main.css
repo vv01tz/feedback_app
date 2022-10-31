@@ -204,8 +204,10 @@ a {
 .card-rating{
     background: linear-gradient(to left bottom,#FFF000,#ED008C);
     background-clip: text;
-    -webkit-background-clip: text;
     color: transparent;
+    text-align: right;
+    -webkit-background-clip: text;
+    width: 113px;
 }
 
 .card-text{
