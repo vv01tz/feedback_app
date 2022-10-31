@@ -8,7 +8,7 @@ ratingContainer.forEach((item) => {
     for (let i = 0; i < numberOfStars; i++){
         // Use fontawesome star iccon
         let star = document.createElement("i");
-        star.classList.add("fa-solid", "fa-star");
+        star.classList.add("fa-solid", "fa-star", "fa-lg");
 
         // Add star icon inside the element
         item.appendChild(star);
