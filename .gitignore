@@ -1,3 +1,5 @@
+.config.php
+
 # Ignore Vim temporary files.
 *~
 .*.swp
