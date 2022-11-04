@@ -20,8 +20,8 @@
             </div>
             <nav class="main-nav">
                 <ul class="main-menu">
-                    <li class="main-menu-item"><a href="/feedbackApp/"> Form </a></li>
-                    <li class="main-menu-item"><a href="/feedbackApp/feedbacks.php"> Feedbacks </a></li>
+                    <li class="main-menu-item"><a href="./"> Form </a></li>
+                    <li class="main-menu-item"><a href="./feedbacks.php"> Feedbacks </a></li>
                 </ul>
             </nav>
         </header>
