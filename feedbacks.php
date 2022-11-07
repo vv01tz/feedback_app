@@ -5,58 +5,42 @@
     $db_connection = new mysqli($servername, $db_user, $db_password, $db);
     if ($db_connection->connect_error)
     {
-        die("Connection failed".$db_connection->connect_error);
+        echo "<h1>Ooops something went wrong try again later </h1>";
     }
 
     // Get feebacks from the database
     $data = $db_connection->query("SELECT * FROM user_feedback ORDER BY DATE desc");
     if (!isset($data))
     {
-        echo "No feedback yet";
+        echo "<h1> No feedback yet </h1>";
     }
 
     $db_connection->close();
-    
 ?>
 <div class="feedback-container">
     <?php
         foreach ($data as $i) {
-        // Start of card
-        echo "<article class='card'>";
-
-        // Start of card header
-        echo "<div class='card-header'>";
-
-        echo "<div class='card-username'>";
-        echo $i["name"];
-        echo "</div>";
-
-        echo "<div data-rating=$i[rating] class='card-rating'>";
-
-        echo "</div>";
-        
-        echo "</div>";
-        // End of card header
-
-        // Start of card body
-        echo "<div class='card-body'>";
-        echo "<p class='card-text'>";
-        echo $i["message"];
-        echo "</p>";
-        echo "</div>";
-        // End of card body
-
-        // Start of card footer
-        $feedback_date = date_create($datetime=$i['date']);
-        echo "<div class='card-footer'>";
-        echo "<p class='card-date'>";
-        echo date_format($feedback_date, "d/m/Y");
-        echo "</p>";
-        echo "</div>";
-        // End of card footer
-
-        // End of card
-        echo "</article>";
+            $feedback_date = date_create($datetime=$i['date']);
+            $formatted_date = date_format($feedback_date, 'd/m/Y');
+            echo "
+                <article class='card'>
+                    <div class='card-header'>
+                        <div class='card-username'>
+                            $i[name]
+                        </div>
+                        <div data-rating=$i[rating] class='card-rating'></div>
+                    </div>
+                    <div class='card-body'>
+                        <p class='card-text'>
+                            $i[message]
+                        </p>
+                    </div>
+                    <div class='card-footer'>
+                        <p class='card-date'>
+                            $formatted_date
+                        </p>
+                    </div>
+                </article>";
         }
     ?>
 </div>
