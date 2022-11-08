@@ -9,8 +9,8 @@
     }
 
     // Get feebacks from the database
-    $data = $db_connection->query("SELECT * FROM user_feedback ORDER BY DATE desc");
-    if (!isset($data))
+    $feedbacks = $db_connection->query("SELECT * FROM user_feedback ORDER BY DATE desc");
+    if (!isset($feedbacks))
     {
         echo "<h1> No feedback yet </h1>";
     }
@@ -19,20 +19,20 @@
 ?>
 <div class="feedback-container">
     <?php
-        foreach ($data as $i) {
-            $feedback_date = date_create($datetime=$i['date']);
+        foreach ($feedbacks as $feedback) {
+            $feedback_date = date_create($datetime=$feedback['date']);
             $formatted_date = date_format($feedback_date, 'd/m/Y');
             echo "
                 <article class='card'>
                     <div class='card-header'>
                         <div class='card-username'>
-                            $i[name]
+                            $feedback[name]
                         </div>
-                        <div data-rating=$i[rating] class='card-rating'></div>
+                        <div data-rating=$feedback[rating] class='card-rating'></div>
                     </div>
                     <div class='card-body'>
                         <p class='card-text'>
-                            $i[message]
+                            $feedback[message]
                         </p>
                     </div>
                     <div class='card-footer'>
